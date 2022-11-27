@@ -16,10 +16,11 @@ jobs:
         env:
           APOD_API_KEY: ${{ secrets.PRIVATE_KEY }}
         run: echo PRIVATE_KEY=\"$PRIVATE_KEY\" > ./local.properties
-      - name: Build the app
-        run: ./gradlew assembleDebug
       - name: Make gradlew executable
         run: chmod +x ./gradlew
+      - name: Build the app
+        run: ./gradlew assembleDebug
+     
 
 
       
