@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Marvel Api</string>
+
+    <!--region Drawer !-->
+    <string name="navigation_drawer_open">Abrir navigation drawer</string>
+    <string name="navigation_drawer_close">Fechar navigation drawer</string>
+    <!--endregion Drawer !-->
+
+    <!--region Header !-->
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <!--region Header !-->
+
+    <string name="action_settings">Favoritos</string>
+
+    <!--region Menu !-->
+    <string name="menu_home">Home</string>
+    <string name="menu_favorites">Favoritos</string>
+    <string name="menu_details">Detalhes</string>
+    <string name="no_connection_message">Sem internet, Ligue sua internet e tente novamente</string>
+    <string name="no_connection_title">Sem Internet</string>
+    <string name="accessibility_search_hint_home">Pesquisar um personagem pelo nome</string>
+    <string name="accessibility_fav_true_button">Favoritado</string>
+    <string name="accessibility_fav_false_button">Não favoritado</string>
+    <string name="accessibility_fav_action">\" favoritar\"</string>
+    <string name="accessibility_iv_image_of">\"imagem de: \"</string>
+    <!--endregion Menu !-->
+
+</resources>
