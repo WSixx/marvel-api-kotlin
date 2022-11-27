@@ -15,6 +15,7 @@ android {
         targetSdk 33
         versionCode 1
         versionName "1.0"
+        buildConfigField 'String', 'PRIVATE_KEY', getApiKey()
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -40,9 +41,15 @@ android {
     }
 }
 
+String getApiKey() {
+    def propFile = rootProject.file("./local.properties")
+    def properties = new Properties()
+    properties.load(new FileInputStream(propFile))
+    return properties['PRIVATE_KEY']
+}
+
 dependencies {
 
-    testImplementation 'junit:junit:4.12'
     def room_version = "2.4.3"
     def retrofit_version = "2.9.0"
     def gson_version = "2.9.0"
