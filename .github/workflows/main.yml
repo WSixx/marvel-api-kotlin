@@ -18,5 +18,8 @@ jobs:
         run: echo PRIVATE_KEY=\"$PRIVATE_KEY\" > ./local.properties
       - name: Build the app
         run: ./gradlew assembleDebug
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+
 
       
