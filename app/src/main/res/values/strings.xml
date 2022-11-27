@@ -25,6 +25,8 @@
     <string name="accessibility_fav_false_button">Não favoritado</string>
     <string name="accessibility_fav_action">\" favoritar\"</string>
     <string name="accessibility_iv_image_of">\"imagem de: \"</string>
+    <string name="accessibility_search_text">Pesquisar personagem pelo nome</string>
+    <string name="accessibility_search_role">Barra de Pesquisa</string>
     <!--endregion Menu !-->
 
 </resources>

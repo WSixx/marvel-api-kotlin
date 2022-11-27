@@ -6,15 +6,10 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.accessibility.AccessibilityEvent
-import android.view.accessibility.AccessibilityNodeInfo
-import android.view.accessibility.AccessibilityNodeInfo.ACTION_CLICK
-import android.view.accessibility.AccessibilityNodeInfo.AccessibilityAction
 import android.widget.ToggleButton
 import androidx.appcompat.widget.SearchView
 import androidx.core.view.AccessibilityDelegateCompat
 import androidx.core.view.ViewCompat
-import androidx.core.view.ViewCompat.onInitializeAccessibilityNodeInfo
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
@@ -22,6 +17,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.marvelapi.R
 import com.example.marvelapi.data.CharacterInterfaceBase
 import com.example.marvelapi.data.database.FavoriteCharacterInterface
 import com.example.marvelapi.data.remote.CharacterInterfaceResult
@@ -60,7 +56,6 @@ class HomeFragment : BaseFragment(),
         setSearchViewAccessibility()
         //endregion
 
-
         homeViewModel.allFavorites.observe(viewLifecycleOwner) { fav ->
             fav?.let { adapter.setFavorites(fav) }
         }
@@ -84,10 +79,9 @@ class HomeFragment : BaseFragment(),
                 info: AccessibilityNodeInfoCompat,
             ) {
                 super.onInitializeAccessibilityNodeInfo(host, info)
-                print("Entrou no onInitializeAccessibilityNodeInfo")
-                info.contentDescription = "Pesquisar personagem pelo nome"
+                info.contentDescription = getString(R.string.accessibility_search_text)
                 info.className = android.widget.SearchView::class.java.name
-                info.roleDescription = "Barra de Pesquisa"
+                info.roleDescription = getString(R.string.accessibility_search_role)
             }
         })
     }
@@ -101,6 +95,7 @@ class HomeFragment : BaseFragment(),
         binding.rvCharacters.adapter = adapter
     }
 
+    //region Observer Data
     private fun observeData(homeViewModel: HomeViewModel) {
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
@@ -124,6 +119,7 @@ class HomeFragment : BaseFragment(),
             }
         }
     }
+    //endregion
 
     override fun toCallWhenHasInternetConnection() {
         homeViewModel.getMarvelCharacters()

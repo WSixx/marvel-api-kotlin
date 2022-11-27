@@ -3,7 +3,6 @@ package com.example.marvelapi.ui.home
 import android.widget.ToggleButton
 import com.example.marvelapi.data.CharacterInterfaceBase
 
-
 /**
  *
  *
@@ -13,5 +12,8 @@ import com.example.marvelapi.data.CharacterInterfaceBase
  */
 interface OnFavoriteClickListener {
 
+    /**
+     * Handles clicks events on Favorite Button
+     */
     fun onClick(view: ToggleButton, data: CharacterInterfaceBase) {}
 }

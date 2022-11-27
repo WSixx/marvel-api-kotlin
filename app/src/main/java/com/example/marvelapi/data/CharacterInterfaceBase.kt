@@ -2,7 +2,6 @@ package com.example.marvelapi.data
 
 import com.example.marvelapi.data.remote.Thumbnail
 
-
 /**
  *
  *

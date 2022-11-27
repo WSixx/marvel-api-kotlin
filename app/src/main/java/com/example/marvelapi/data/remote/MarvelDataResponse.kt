@@ -1,6 +1,5 @@
 package com.example.marvelapi.data.remote
 
-
 import com.google.gson.annotations.SerializedName
 
 /**

@@ -20,11 +20,9 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.marvelapi.R
 import com.example.marvelapi.data.database.FavoriteCharacterInterface
-import com.example.marvelapi.ui.home.HomeFragmentDirections
 import com.example.marvelapi.ui.home.OnFavoriteClickListener
 import com.example.marvelapi.utils.LoadImage
 import com.example.marvelapi.utils.MyDiffCallback
-import com.squareup.picasso.Picasso
 import java.lang.ref.WeakReference
 
 /**
@@ -44,10 +42,10 @@ class FavoritesAdapter(private val listener: OnFavoriteClickListener) :
         private lateinit var favoriteResult: FavoriteCharacterInterface
         private var weakContext : WeakReference<Context>? = WeakReference(view.context)
 
-        val logoImage: ImageView
-        val title: TextView
-        val subTitle: TextView
-        val favButton: ToggleButton
+        val logoImage       : ImageView
+        val title           : TextView
+        val subTitle        : TextView
+        val favButton       : ToggleButton
 
         init {
             logoImage = view.findViewById(R.id.iv_card_logo)

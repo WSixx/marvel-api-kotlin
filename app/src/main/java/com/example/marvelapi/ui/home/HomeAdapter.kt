@@ -44,10 +44,10 @@ class HomeAdapter(private val listener: OnFavoriteClickListener) :
         private lateinit var characterResult: CharacterInterfaceResult
         private var weakContext : WeakReference<Context>? = WeakReference(view.context)
 
-        val logoImage: ImageView
-        val title: TextView
-        val subTitle: TextView
-        val favButton: ToggleButton
+        val logoImage   : ImageView
+        val title       : TextView
+        val subTitle    : TextView
+        val favButton   : ToggleButton
 
         init {
             logoImage = view.findViewById(R.id.iv_card_logo)
@@ -106,7 +106,6 @@ class HomeAdapter(private val listener: OnFavoriteClickListener) :
         notifyDataSetChanged()
     }
 
-
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(viewGroup.context)
             .inflate(R.layout.home_adapter, viewGroup, false)
@@ -123,7 +122,6 @@ class HomeAdapter(private val listener: OnFavoriteClickListener) :
         viewHolder.favButton.background =
             checkIfIsFavorite(context, this.currentList[position], viewHolder.favButton)
         viewHolder.setAlt(this.currentList[position])
-
     }
 
     private fun checkIfIsFavorite(

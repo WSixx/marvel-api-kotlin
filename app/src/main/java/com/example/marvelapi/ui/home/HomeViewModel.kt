@@ -19,6 +19,7 @@ open class HomeViewModel(
     private val localRepository: LocalFavoritesCharactersRepository,
 ) : ViewModel() {
 
+    //region variables
     private val _getAllCharactersStatus = MutableStateFlow<Resource<List<CharacterInterfaceResult>>>(Resource.Loading())
     val allCharactersStatus: StateFlow<Resource<List<CharacterInterfaceResult>>> = _getAllCharactersStatus
 
@@ -36,6 +37,7 @@ open class HomeViewModel(
         localRepository.allFavoritesCharacters.asLiveData()
 
     private val repository = AllCharactersRepository(Dispatchers.IO)
+    //endregion variables
 
     companion object {
         val Factory: ViewModelProvider.Factory = viewModelFactory {

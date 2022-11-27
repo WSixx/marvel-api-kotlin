@@ -12,11 +12,15 @@ import java.security.MessageDigest
  */
 open class ApiHash {
 
-    companion object{
+    companion object {
+        private const val ALGORITHM = "MD5"
+
         fun buildAndGetHash(): String {
-            val toBeHashing = "${Constants.timeStamp}${Constants.PRIVATE_KEY}${Constants.PUBLIC_KEY}"
-            val md = MessageDigest.getInstance("MD5")
-            return BigInteger(1, md.digest(toBeHashing.toByteArray())).toString(16).padStart(32, '0')
+            val toBeHashing =
+                "${Constants.timeStamp}${Constants.PRIVATE_KEY}${Constants.PUBLIC_KEY}"
+            val md = MessageDigest.getInstance(ALGORITHM)
+            return BigInteger(1, md.digest(toBeHashing.toByteArray())).toString(16)
+                .padStart(32, '0')
         }
     }
 }
