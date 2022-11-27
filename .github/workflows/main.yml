@@ -1,0 +1,17 @@
+name: My Workflows secrets
+
+on: deployment
+
+jobs:
+  test:
+    name: marvel-api-kotlin
+    runs-on: ubuntu-18.04
+    env:
+      RELEASE_KEYSTORE_PATH: ${{ secrets.RELEASE_KEYSTORE_PATH }}
+      RELEASE_KEYSTORE_PASSWORD: ${{ secrets.RELEASE_KEYSTORE_PASSWORD }}
+      RELEASE_KEY_ALIAS: ${{ secrets.RELEASE_KEY_ALIAS }}
+      RELEASE_KEY_PASSWORD: ${{ secrets.RELEASE_KEY_PASSWORD }}
+    steps: 
+      - run: touch local.properties
+      - run: echo -e "\nPRIVATE_KEY=$PRIVATE_KEY" >> local.properties
+      - run: cat local.properties
