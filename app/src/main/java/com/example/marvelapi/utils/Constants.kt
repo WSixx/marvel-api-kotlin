@@ -16,7 +16,7 @@ class Constants {
         const val PUBLIC_KEY = "a1060a085d3c48b937b63dfcea07593d"
 
         //TODO: IGNORE
-         val PRIVATE_KEY = BuildConfig.PRIVATE_KEY
+        const val PRIVATE_KEY = BuildConfig.PRIVATE_KEY
         const val DATABASE_NAME = "fav-characters"
     }
 }
